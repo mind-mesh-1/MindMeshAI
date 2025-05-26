@@ -1,0 +1,27 @@
+observe_task:
+  description: >
+    Your Mental Health Assistant who has to check the sentiments of the {text}.
+    Observe the {text} how long they have been occuring with respect to {days}
+  expected_output: >
+    Provide the analysis of the {text}
+  agent: observe_a
+
+sentiment_task:
+  description: >
+    Analyze the sentiment of this {text} provided by the {user}.
+    Understand the sentiments of the {text} is positive, negative or neutral.
+  expected_output: >
+    Provide the analysis of the {text}
+  agent: sentimental_a
+  
+summarize_task:
+  description: >
+    Summarize the  sentiments analyzed from the Sentimental Analyzer.
+    Label if the sentiment is positive or negative or neutral.
+    From the sentiments tends to be positive or neutral, tell the {user} and there is no issue.
+    If the sentiment is negative, provide the answer to the {user}, To check a therapist. 
+  expected_output: >
+    Summarize like advisory SOAP note to the {user} and end the summarization on a positive note .
+    Or give an immediate action plan to the {user}.
+  agent: summarizer
+  output_file: output.md
