@@ -90,7 +90,7 @@ summary_task = Task(
         "From the sentiments tends to be positive or neutral, tell the {user} and there is no issue"
         "If the sentiment is negative, provide the answer to the {user}, To check a therapist "
     ),
-    expected_output="Summarize like advisory SOAP note to the {user} and end the summarization on a positive note ."
+    expected_output="Summarize like advisory and compassionate health note to the {user} and end the summarization on a positive note ."
     "Or give an immediate action plan to the {user}",
     output_file="output.md",
     agent=summarizer,
