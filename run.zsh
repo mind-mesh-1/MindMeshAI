@@ -1,11 +1,10 @@
 #!/bin/zsh
 
-# Build the frontend
+# Build the frontend with limited memory usage
 echo "Building frontend..."
 npm install
-npm run build
+NODE_OPTIONS="--max_old_space_size=1024" npm run build
 npm start &
-
 
 # Start FastAPI backend with Uvicorn in production mode
 echo "Starting FastAPI backend..."
