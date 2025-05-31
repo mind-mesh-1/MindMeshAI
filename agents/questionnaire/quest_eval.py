@@ -71,7 +71,6 @@ def run(responses):
         handle_parsing_errors=True
     )
     pre_collected_responses = json.dumps(responses)
-    print("TEST before agentexecutor")
     agent_output = agent_executor.invoke(
         {
             "input": f"Please interpret the following PHQ-9 responses: {pre_collected_responses}."

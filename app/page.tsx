@@ -30,9 +30,9 @@ export default function Home() {
           <img 
         src="/brain.png" 
         alt="MindMesh Logo"
-        width={300}
-        height={200}
-        className="w-full max-w-3xl rounded-lg mx-auto"
+        width={500}
+        height={600}
+        
       />
         </div>
         <div>
