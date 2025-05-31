@@ -4,23 +4,15 @@ import { useEffect, useState } from "react";
  
 export function ChatAgent() {
 
-  const [greeting, setGreeting] = useState("");
-
-  useEffect(() => {
-    fetch("http://localhost:8000/api/greet?name=NextUser")
-      .then((res) => res.json())
-      .then((data) => setGreeting(data.message))
-      .catch((err) => console.error("API error:", err));
-  }, []);
 
   return (
     <div>
-      <p className="text-lg mb-4">{greeting}</p>
       <CopilotKit runtimeUrl="api/copilotkit">
+        <div style={{ height: "80vh", maxHeight: "80vh", overflow: "auto" }}>
             <CopilotChat
             instructions={
                "First, ask the user to describe their current mood. " +
-               "After analyzing their sentiment, guide them through the PHQ-9 questionnaire, asking one question at a time and collecting their answers. " +
+               "After analyzing, guide them through the PHQ-9 questionnaire, asking one question at a time and collecting their answers. " +
                "After all questions are answered, summarize the results compassionately."
             }
             labels={{
@@ -29,6 +21,7 @@ export function ChatAgent() {
                 placeholder: "type your message here...",
               }}
             />
+        </div>
     </CopilotKit>
     </div>     
   );
